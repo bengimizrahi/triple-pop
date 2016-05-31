@@ -4,6 +4,8 @@ int main()
 {
     sf::RenderWindow window{sf::VideoMode{200, 200}, "SFML works!"};
     
+    while (window.isOpen()) {
+    }
     return 0;
 }
 
