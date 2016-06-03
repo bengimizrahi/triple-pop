@@ -24,4 +24,11 @@ private:
     std::array<Hexagrid*, 6> neighbors_{{}};
 };
 
+template <int Level>
+class Hexamesh {
+    Hexamesh();
+private:
+    std::array<Hexagrid, num_of_hexagrids(Level)> hexagrids_;
+};
+
 #endif // HEXAGRID_H
