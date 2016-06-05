@@ -23,7 +23,7 @@ private:
 };
 
 class Hexamesh {
-    Hexamesh() : hexagrid_();
+    Hexamesh(int level);
 private:
     std::vector<std::unique_ptr<Hexagrid>> hexagrids_;
 };
