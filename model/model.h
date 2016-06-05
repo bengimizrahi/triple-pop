@@ -14,9 +14,6 @@ constexpr int num_of_hexagrids(int level)
     return (3 * level * level) - (3 * level) + 1
 }
 
-struct Ball {
-    sf::Color color_{};
-};
 
 class Hexagrid {
 private:
