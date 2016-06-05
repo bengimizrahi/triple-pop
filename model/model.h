@@ -20,7 +20,6 @@ constexpr int hexamesh_center_idx(int level)
 
 class Hexagrid {
 private:
-    std::unique_ptr<Ball> ball_{};
     std::array<Hexagrid*, 6> neighbors_{{}};
 };
 
