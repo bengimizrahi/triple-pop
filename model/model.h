@@ -1,7 +1,6 @@
 #ifndef HEXAGRID_H
 #define HEXAGRID_H
 
-#include <SMFL/Graphics.hpp>
 #include <memory>
 #include <vector>
 
