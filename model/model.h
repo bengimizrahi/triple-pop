@@ -3,7 +3,7 @@
 
 #include <SMFL/Graphics.hpp>
 #include <memory>
-#include <array>
+#include <vector>
 
 constexpr float hexagrid_radius = 10.0f;
 constexpr float ball_radius = hexagrid_radius * 0.9;
@@ -21,11 +21,10 @@ private:
     std::array<Hexagrid*, 6> neighbors_{{}};
 };
 
-template <int Level>
 class Hexamesh {
     Hexamesh();
 private:
-    std::array<Hexagrid, num_of_hexagrids(Level)> hexagrids_;
+    std::vector<std::unique_ptr<Hexagrid>> hexagrids_;
 };
 
 #endif // HEXAGRID_H
