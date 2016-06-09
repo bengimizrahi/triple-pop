@@ -1,6 +1,8 @@
 #include "model.h"
 
+#include "helper.h"
 #include <iostream>
+
 using namespace std;
 
 /* ...xxxx
@@ -49,14 +51,14 @@ Hexamesh::Hexamesh(int level)
                 }
             }
         },
-        [this](int y, int x, int idx)
+        [this, level](int x, int y, int idx)
         {
-            const auto* myself = hexagrids_[idx].get();
-            int count = 0;
-            for (auto d : {NE, N, NW, SW, S, SE}) {
-                count += (myself->neighbor(d) == nullptr);
-            }
-            cout << idx << " " << count;
+            auto vec1 = normal<float>(direction_angles[SW]) * float(level - 1);
+            auto vec2 = normal<float>(direction_angles[N]) * float(y);
+            auto vec3 = normal<float>(direction_angles[SE]) * float(x);
+            auto pos_vec = vec1 + vec2 + vec3;
+            auto* myself = hexagrids_[idx].get();
+            myself->set_position_vector(pos_vec);
         }
     };
     for (auto f : funcs) {
