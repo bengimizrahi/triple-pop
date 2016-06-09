@@ -4,11 +4,14 @@
 #include <memory>
 #include <vector>
 #include <array>
+#include <cmath>
 
 constexpr float hexagrid_radius = 10.0f;
-constexpr float ball_radius = hexagrid_radius * 0.9;
+constexpr float ball_radius = hexagrid_radius * 0.9f;
 enum Direction {NE, N, NW, SW, S, SE};
 
+constexpr float direction_angles[] =
+    { M_PI / 6, M_PI_2, 5 * M_PI / 6, 7 * M_PI / 6, 3 * M_PI_2, 11 * M_PI / 6};
 constexpr int num_of_hexagrids(int level)
     { return (3 * level * level) - (3 * level) + 1; }
 
